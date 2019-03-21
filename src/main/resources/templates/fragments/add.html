@@ -1,0 +1,71 @@
+<div class="container" xmlns:th="http://www.thymeleaf.org" th:fragment="add">
+
+
+
+
+<form th:action="@{/add}" th:object="${car}" method="post" action="/add">
+    <div class="form-row">
+        <div class="col-sm-12 col-md-6 form-group">
+            <label>Car Name</label>
+            <input type="text" name="carName" placeholder="car name" class="form-control">
+        </div>
+        <div class="col-sm-12 col-md-6 form-group">
+            <label>Power</label>
+            <input type="number" name="Power" placeholder="power" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-sm-12 col-md-6 form-group">
+            <label>cours</label>
+            <input type="number"  name="cours" placeholder="cours"
+                   class="form-control">
+        </div>
+        <div class="col-sm-12 col-md-6 form-group">
+            <label>Year of Production</label>
+            <input type="number" name="yearOfProduction" placeholder="yearOfProduction" class="form-control">
+        </div>
+        <div class="form-row">
+            <div class="col-sm-12 col-md-6 form-group">
+                <label>type of fuel</label>
+                <input type="text"  name="typeOfFuel" placeholder="typeOfFuel"
+                       class="form-control">
+            </div>
+
+    </div>
+    <div class="form-row">
+        <div class="col-sm-12 col-md-6 form-group">
+            <label>color</label>
+            <input type="text" name="color" placeholder="color" class="form-control">
+        </div>
+    </div>
+        <div class="col-sm-12 col-md-6 form-group">
+            <label>Car Photo</label>
+            <input type="text" name="carPhoto" placeholder="carPhoto" class="form-control">
+        </div>
+    </div>
+    <div>
+        <div class="col-sm-12 col-md-6 form-group">
+            <label>Costs</label>
+            <input type="number" name="costs" placeholder="costs" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-sm-12 form-group">
+            <label>car Describtion</label>
+            <textarea rows="5" name="carDescribtion" placeholder="carDescribtion" class="form-control"></textarea>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-sm-12 text-right form-group">
+            <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus-square"
+                                                                    aria-hidden="true"></i> Create
+            </button>
+        </div>
+    </div>
+</form>
+
+
+<hr>
+</div>

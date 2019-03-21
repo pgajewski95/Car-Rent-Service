@@ -1,7 +1,7 @@
 <div th:fragment="table" class="container"  xmlns:th="http://www.thymeleaf.org">
     <div class="row">
-        <div class="col-sm-12">
-            <table class="table table-dark">
+        <div class="col-sm-15">
+            <table class="table table-blue">
                 <tr>
                     <th>Car Name </th>
                     <th>Power[HP]</th>
@@ -20,7 +20,9 @@
                     <td th:text="${#numbers.formatInteger(p.getYearOfProduction(),1)}"></td>
                     <td th:text="${p.getColor()}"></td>
                     <td th:text="${p.getCarDescribtion()}"></td>
-                    <td th:icon="${p.getCarPhoto()}"></td>
+                    <td><img th:src="@{${p.getCarPhoto()}}" alt="Photo of Car" style="height: auto;width: 48%">
+
+                    </td>
                     <td th:text="${#numbers.formatCurrency(p.getCosts())}"></td>
                     <td th:text="${p.getTypeOfFuel()}"></td>
                     <td></td>

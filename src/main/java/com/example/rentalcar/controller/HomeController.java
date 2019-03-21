@@ -2,9 +2,12 @@ package com.example.rentalcar.controller;
 
 
 import com.example.rentalcar.Services.CarService;
+import com.example.rentalcar.model.Dtos.CarDto;
+import com.example.rentalcar.repository.CarRepository;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HomeController {
@@ -17,14 +20,40 @@ public class HomeController {
     @GetMapping("/")
     public String getHomePage(Model model){
 
-        System.out.println("Hello");
+        model.addAttribute("cars", carService.getCarsDto());
         return "index";
 
     }
+    @PreAuthorize(value = "hasRole('ADMIN')")
     @GetMapping("/cars")
     public String getCarsPage(Model model) {
 
         model.addAttribute("cars",carService.getCarsDto());
         return "cars";
+    }
+
+    @GetMapping("/delete")
+    public String deletePlanet(@RequestParam(value = "car") String carName) {
+        carService.deleteCar(carName);
+        return "redirect:/cars";
+    }
+
+    @PostMapping("/add")
+    public String addPlanet(@ModelAttribute CarDto carDto){
+        carService.addCar(carDto);
+        return "redirect:/cars";
+    }
+    @GetMapping("/login")
+    public String loginPage(){
+
+        return "login";
+    }
+
+
+    @GetMapping("/describe")
+    public String describePage( Model model){
+
+        model.addAttribute("cars",carService.getCarsDto());
+        return "describe";
     }
 }

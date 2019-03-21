@@ -12,13 +12,14 @@
 
         <p th:text="Tekst" style="color: white"></p>
         <a href="/cars"><p>Car Rental Service Panel</p></a> <br>
-        <a><p>logout</p></a> <br>
+        <a href="/logout"><p>logout</p></a> <br>
         <!--<a href="/excel"><p>create .xls file</p></a>-->
         <hr>
     </div>
-    <!--<div class="row">-->
-        <!--<div th:replace="fragments/overview :: planets"></div>-->
-    <!--</div>-->
+
+    <div class="row">
+        <div th:type th:replace="fragments/overview :: cars"></div>
+    </div>
 </div>
 </body>
-</html>l>
+</html>

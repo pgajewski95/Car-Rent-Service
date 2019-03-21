@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+
+
+    <meta charset="utf-8"/>
+
+</head>
+<body>
+<h1> Car Describtion</h1>
+<div class="col-sm-15">
+    <table class="table table-blue">
+<tr>
+<tr th:each="p : ${cars}">
+    <th>Car Name</th>
+    <td th:text="${p.getCarName()}"></td>
+    <th>Power[HP]</th>
+    <td th:text="${#numbers.formatInteger(p.getPower(), 1)}"></td>
+    <th>course[KM]</th>
+    <td th:text="${#numbers.formatInteger(p.getCours(), 1)}"></td>
+    <th>Year Of Production</th>
+    <td th:text="${#numbers.formatInteger(p.getYearOfProduction(),1)}"></td>
+    <th>Color</th>
+    <td th:text="${p.getColor()}"></td>
+    <th>Car Describtion</th>
+    <td th:text="${p.getCarDescribtion()}"></td>
+    <th>car image</th>
+    <td><img th:src="@{${p.getCarPhoto()}}" alt="Photo of Car" style="height: auto;width: 48%"></td>
+    <th>Costs</th>
+    <td th:text="${#numbers.formatCurrency(p.getCosts())}"></td>
+    <th>Type of Fuel</th>
+    <td th:text="${p.getTypeOfFuel()}"></td>
+</tr>
+
+
+</table>
+
+
+
+
+
+</div>
+
+
+
+
+</tr>
+</body>
+</html>

@@ -30,8 +30,13 @@ public class CarService {
                 .map(carMapper::map)
                 .collect(Collectors.toList());
     }
+    public void deleteCar(String carName){
+        carRepository.deleteByCarName(carName);
+    }
 
 
-
-
+    public Car addCar(CarDto carDto) {{
+        return carRepository.save(carMapper.reverse(carDto));
+    }
+    }
 }
