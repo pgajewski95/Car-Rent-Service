@@ -1,0 +1,42 @@
+<div th:fragment="table" class="container"  xmlns:th="http://www.thymeleaf.org">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-dark">
+                <tr>
+                    <th>Car Name </th>
+                    <th>Power[HP]</th>
+                    <th>course[KM]</th>
+                    <th>Year Of Production</th>
+                    <th>Color</th>
+                    <th>Car Describtion</th>
+                    <th>car image</th>
+                    <th>Costs</th>
+                    <th>Type of Fuel</th>
+                </tr>
+                <tr th:each="p : ${cars}">
+                    <td th:text="${p.getCarName()}"></td>
+                    <td th:text="${#numbers.formatInteger(p.getPower(), 1)}"></td>
+                    <td th:text="${#numbers.formatInteger(p.getCours(), 1)}"></td>
+                    <td th:text="${#numbers.formatInteger(p.getYearOfProduction(),1)}"></td>
+                    <td th:text="${p.getColor()}"></td>
+                    <td th:text="${p.getCarDescribtion()}"></td>
+                    <td th:icon="${p.getCarPhoto()}"></td>
+                    <td th:text="${#numbers.formatCurrency(p.getCosts())}"></td>
+                    <td th:text="${p.getTypeOfFuel()}"></td>
+                    <td></td>
+                    <td>
+                        <form action="/delete" method="get">
+                            <input type="hidden" th:value="${p.getCarName()}" name="car">
+                            <button class="btn btn-sm btn-warning" type="submit">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+
+</div>
