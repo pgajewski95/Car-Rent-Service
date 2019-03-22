@@ -16,7 +16,7 @@
                 <tr th:each="p : ${cars}">
                     <td th:text="${p.getCarName()}"></td>
                     <td th:text="${#numbers.formatInteger(p.getPower(), 1)}"></td>
-                    <td th:text="${#numbers.formatInteger(p.getCours(), 1)}"></td>
+                    <td th:text="${#numbers.formatInteger(p.getCarMilage(), 1)}"></td>
                     <td th:text="${#numbers.formatInteger(p.getYearOfProduction(),1)}"></td>
                     <td th:text="${p.getColor()}"></td>
                     <td th:text="${p.getCarDescribtion()}"></td>

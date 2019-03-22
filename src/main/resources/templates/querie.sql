@@ -7,10 +7,10 @@ Users
  */
 
  insert into car_rental.user (id, active, name, password)
- values (1, 1,'ADMIN','$2a$10$wgUWZXA7mhWAI40AHJt6PeO5tuFpsHxFyMrohTeL6tHB80H9qQFKW');
+ values (1, 1,'ADMIN','$2a$10$Q0U/VqvdNzhOCIhPxIE7vu3CkK5d9tjHwhR9QTSit24pMMwpGLNi.');
 
 insert into car_rental.user (id, active, name, password)
-values (2, 1,'USER','$2a$10$QyYG3qKr0nvBaAg3ueTBTOcKddWWJRK7z7wepJLbqr8MIevSTM7UC');
+values (2, 1,'USER','$2a$10$mycF2n0iOMtTU7hArCM.OOBS7CUHkvrHb5PikPpJpz4Ufimu4BmVe');
 
 /*ADD ROLE TO USER*/
 

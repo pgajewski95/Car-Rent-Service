@@ -15,7 +15,7 @@ public class CarDto {
 
     private long power;
 
-    private double cours;
+    private double carMilage;
 
     private long yearOfProduction;
 

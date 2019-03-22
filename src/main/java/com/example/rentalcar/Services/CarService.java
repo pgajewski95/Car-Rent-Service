@@ -8,6 +8,7 @@ import com.example.rentalcar.repository.CarRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -22,21 +23,31 @@ public class CarService {
     }
 
     //Dao
-    public List<Car> getCars(){return carRepository.findAll();}
+    public List<Car> getCars() {
+        return carRepository.findAll();
+    }
+
     //DTO
-    public List<CarDto> getCarsDto(){
+    public List<CarDto> getCarsDto() {
         return carRepository.findAll()
                 .stream()
                 .map(carMapper::map)
                 .collect(Collectors.toList());
     }
-    public void deleteCar(String carName){
+
+    public void deleteCar(String carName) {
         carRepository.deleteByCarName(carName);
     }
 
 
-    public Car addCar(CarDto carDto) {{
+    public Car addCar(CarDto carDto) {
         return carRepository.save(carMapper.reverse(carDto));
     }
+
+    public Car getCarsByIdea(Long id) {
+        return carRepository.findById(id).get();
+
     }
 }
+
+

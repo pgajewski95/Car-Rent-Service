@@ -2,6 +2,7 @@ package com.example.rentalcar.controller;
 
 
 import com.example.rentalcar.Services.CarService;
+import com.example.rentalcar.model.Car;
 import com.example.rentalcar.model.Dtos.CarDto;
 import com.example.rentalcar.repository.CarRepository;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -50,10 +51,10 @@ public class HomeController {
     }
 
 
-    @GetMapping("/describe")
-    public String describePage( Model model){
+    @GetMapping("/describe/{id}")
+    public String describePage(@PathVariable Long id, Model model){
 
-        model.addAttribute("cars",carService.getCarsDto());
+        model.addAttribute("cars",carService.getCarsByIdea(id));
         return "describe";
     }
 }

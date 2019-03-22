@@ -2,7 +2,7 @@
     <div class="row" style="margin: 1vh">
 
 
-        <div class="card col-xs-12 col-sm-12 col-md-6 col-xl-4" style="background-color: rgba(0,0,0,.4);"
+        <div class="card col-12 " style="background-color: rgba(0,0,0,.4);"
 
 
              th:each="p : ${cars}">
@@ -16,10 +16,14 @@
                 <img th:src="@{${p.getCarPhoto()}}" alt="Photo of Car" style="height: auto;width: 48%">
                 <!-- Text Content -->
                 <div class="card-body">
+
                     <p class="card-text" th:text="${p.getCarDescribtion()}"></p>
-                    <h6><span th:each="tag :${p.getTypeOfFuel()} " class="badge badge-info" th:text="${typeOfFuel}"
+
+                    <p class="card-text" th:text="${#numbers.formatCurrency(p.getCosts())}" ></p>
+
+                     <h6><span th:each="tag :${p.getTypeOfFuel()} " class="badge badge-info" th:text="${tag}"
                     style="margin: 0.5em;"></span></h6>
-                    <a class="btn btn-sm btn-warning" th:href="@{/describe}"><p class="card-text"> more about &nbsp<span
+                    <a class="btn btn-sm btn-warning" th:href="@{/describe/{id}}"><p class="card-text"> more about &nbsp<span
                             th:text="${p.getCarName()}"></span></p></a>
 
                 </div>

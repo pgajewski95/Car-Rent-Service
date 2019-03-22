@@ -23,8 +23,8 @@ public class Car {
     private String carName;
     @Column(name = "power")
     private long power;
-    @Column(name = "course")
-    private double cours;
+    @Column(name = "car_milage")
+    private double carMilage;
     @Column(name = "year_of_production")
     private long yearOfProduction;
     @Column(name = "color")
