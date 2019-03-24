@@ -19,6 +19,9 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+
+
     @Column(name = "car_name", unique = true, nullable = false)
     private String carName;
     @Column(name = "power")

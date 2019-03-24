@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CarDto {
 
+
+     private  Long id;
     private String carName;
 
     private long power;
