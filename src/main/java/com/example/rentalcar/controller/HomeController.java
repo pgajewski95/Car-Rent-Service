@@ -10,9 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
+
 @Controller
 public class HomeController {
-
+    private CarRepository carRepository;
     private CarService carService;
 
     public HomeController(CarService carService) {
@@ -55,6 +57,11 @@ public class HomeController {
     public String describePage(@PathVariable Long id, Model model){
 
         model.addAttribute("cars",carService.getCarsByIdea(id));
+
         return "describe";
+    }
+    @GetMapping("/buy")
+    public String ContactPage(){
+        return "buy";
     }
 }

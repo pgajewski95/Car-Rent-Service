@@ -17,4 +17,5 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     void deleteByCarName(String planetName);
 
 
+
 }
