@@ -11,7 +11,9 @@
 <h1> Car Describtion</h1>
 
 <tr>
+
 <tr th:each="p : ${cars}">
+
     <th>Car Name: </th>
     <td th:text="${p.getCarName()}"></td>
         <br><br>
@@ -40,8 +42,10 @@
     <td th:text="${p.getTypeOfFuel()}"></td>
         <br><br><br><br><br><br>
     <td>
+
     <a class="btn btn-sm btn-warning" th:href="@{/buy}"><p class="card-text"> BUY NOW<span
            ></span></p></a>
+        <br><br><br><br><br><br><br>
     </td>
 </tr>
 

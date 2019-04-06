@@ -16,6 +16,7 @@ import javax.validation.constraints.NotNull;
 public class HomeController {
     private CarRepository carRepository;
     private CarService carService;
+    private Car car;
 
     public HomeController(CarService carService) {
         this.carService = carService;
@@ -53,10 +54,11 @@ public class HomeController {
     }
 
 
-    @GetMapping("/describe/{id}")
-    public String describePage(@PathVariable Long id, Model model){
+    @GetMapping("/describe")
+    public String describePage( Model model){
 
-        model.addAttribute("cars",carService.getCarsByIdea(id));
+        model.addAttribute("cars", carService.getCarsDto());
+
 
         return "describe";
     }

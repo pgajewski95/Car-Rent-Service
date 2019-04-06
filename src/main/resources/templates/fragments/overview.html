@@ -23,7 +23,7 @@
 
                      <h6><span th:each="tag :${p.getTypeOfFuel()} " class="badge badge-info" th:text="${tag}"
                     style="margin: 0.5em;"></span></h6>
-                    <a class="btn btn-sm btn-warning" th:href="@{/describe/{id}}"><p class="card-text"> more about &nbsp<span
+                    <a class="btn btn-sm btn-warning" th:href="@{/describe}"><p class="card-text"> more about &nbsp<span
                             th:text="${p.getCarName()}"></span></p></a>
 
                 </div>

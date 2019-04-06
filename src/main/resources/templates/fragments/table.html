@@ -14,6 +14,7 @@
                     <th>Type of Fuel</th>
                 </tr>
                 <tr th:each="p : ${cars}">
+
                     <td th:text="${p.getCarName()}"></td>
                     <td th:text="${#numbers.formatInteger(p.getPower(), 1)}"></td>
                     <td th:text="${#numbers.formatInteger(p.getCarMilage(), 1)}"></td>
